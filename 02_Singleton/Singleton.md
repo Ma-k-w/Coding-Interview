@@ -25,8 +25,8 @@ public class Singleton {
   
     public static Singleton getInstance() {  
         if (instance == null)
-        	instance = new Singleton();    
-    	return instance;  
+            instance = new Singleton();    
+        return instance;  
     }  
 }
 ```
@@ -40,16 +40,16 @@ public class Singleton {
 
 ```java
 public class Singleton { 
-	private static Singleton instance;
-	private Singlenton(){}
-	
-	public static Singleton getInstance(){
-		synchronized(Singleton.class){
-			if(instance == null)
-				instance = new Singlenton();
-		}
-		return instance;
-	}
+    private static Singleton instance;
+    private Singlenton(){}
+    
+    public static Singleton getInstance(){
+        synchronized(Singleton.class){
+            if(instance == null)
+                instance = new Singlenton();
+        }
+        return instance;
+    }
 }
 ```
 
@@ -61,19 +61,19 @@ public class Singleton {
 JDK版本：1.5。
 ```java
 public class Singleton { 
-//	必须使用volatile，new一个新对象是多个过程，必须保证该过程不发生重排序。
-	private volatile static Singleton instance;
-	private Singlenton(){}
-	
-	public static Singleton getInstance(){
-		if( instance == null){
-			synchronized(Singleton.class){
-				if(instance == null)
-					instance = new Singlenton();
-			}
-		}
-		return instance;
-	}
+//    必须使用volatile，new一个新对象是多个过程，必须保证该过程不发生重排序。
+    private volatile static Singleton instance;
+    private Singlenton(){}
+    
+    public static Singleton getInstance(){
+        if( instance == null){
+            synchronized(Singleton.class){
+                if(instance == null)
+                    instance = new Singlenton();
+            }
+        }
+        return instance;
+    }
 }
 ```
 
@@ -85,12 +85,12 @@ public class Singleton {
 描述：利用类加载机制。缺点是类加载后就一直存在，如果一直未使用，则会浪费内存。
 ```java
 public class Singleton{
-	private final static Singleton instance = new Singleton();
-	private Singleton() = {}; 
-	
-	public static Singleton getInstance(){
-		return instance;
-	}
+    private final static Singleton instance = new Singleton();
+    private Singleton() = {}; 
+    
+    public static Singleton getInstance(){
+        return instance;
+    }
 }
 ```
 
@@ -102,14 +102,14 @@ public class Singleton{
 描述：利用的依然是类加载的机制。并且静态内部类避免了静态实例在Singleton类加载的时候就创建对象，并且由于静态内部类只会被加载一次，所以这种写法也是线程安全的。
 ```java
 public class Singleton{
-	priavte Singleton(){}
+    priavte Singleton(){}
 
-	private static class SingletonInstance{
-		praivate static final Singleton instance = new Singleton(); 
-	}
-	public static Singleton getInstance(){
-		return SingletonInstance.instance;
-	}
+    private static class SingletonInstance{
+        praivate static final Singleton instance = new Singleton(); 
+    }
+    public static Singleton getInstance(){
+        return SingletonInstance.instance;
+    }
 }
 ```
 
