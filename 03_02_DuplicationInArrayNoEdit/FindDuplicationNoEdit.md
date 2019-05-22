@@ -24,7 +24,7 @@
 - 当范围缩小到某个数时：
     - 如果数组中这个数的统计数量超过了1个，说明这个数是一个重复数。
     - 否则，出错。
-![03_02不修改数组找出重复的数字](C:\Users\mkw\Desktop\剑指offer插图\03_02不修改数组找出重复的数字.jpg)
+![03_02不修改数组找出重复的数字](https://github.com/Ma-k-w/Coding-Interview/blob/master/pic/03_02%E4%B8%8D%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E6%89%BE%E5%87%BA%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97.jpg)
 ```java
     public int getDuplication(int[] arr) {
         if (arr == null || arr.length == 0)
