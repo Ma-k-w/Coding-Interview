@@ -39,7 +39,7 @@ public boolean duplicate(int[] arr) {
      - 如果相等，则说明有重复数字。
  - 如果相等：
    - 跳过，进入下一轮循环。
-![03_01找出数组中重复的数字](C:\Users\mkw\Desktop\剑指offer插图\03_01找出数组中重复的数字.jpg)
+![03_01找出数组中重复的数字](https://github.com/Ma-k-w/Coding-Interview/blob/master/pic/03_01%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97.jpg )
 ```java
     public boolean duplicate(int[] arr) {
         if(arr == null || arr.length == 0)
